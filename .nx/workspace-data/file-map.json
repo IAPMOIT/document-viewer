@@ -99,58 +99,114 @@
   },
   "fileMap": {
     "projectFileMap": {
-      "docviewhelper": [
+      "demo-react": [
         {
-          "file": "packages/docviewhelper/.babelrc",
-          "hash": "4734508471883268701"
+          "file": "apps/demo-react/.babelrc",
+          "hash": "13020124393823981135"
         },
         {
-          "file": "packages/docviewhelper/.eslintrc.json",
-          "hash": "9703569748258640057"
+          "file": "apps/demo-react/.browserslistrc",
+          "hash": "2888533144288818662"
         },
         {
-          "file": "packages/docviewhelper/README.md",
-          "hash": "12151324711411258584"
+          "file": "apps/demo-react/.eslintrc.json",
+          "hash": "11012487992710232822"
         },
         {
-          "file": "packages/docviewhelper/jest.config.ts",
-          "hash": "13466499919858543635"
+          "file": "apps/demo-react/jest.config.ts",
+          "hash": "11743847586933159007"
         },
         {
-          "file": "packages/docviewhelper/package.json",
-          "hash": "1433611925147057568"
+          "file": "apps/demo-react/project.json",
+          "hash": "10098205904880886219"
         },
         {
-          "file": "packages/docviewhelper/project.json",
-          "hash": "14675182016966539254"
+          "file": "apps/demo-react/src/app/app.module.scss",
+          "hash": "7885872636310131517"
         },
         {
-          "file": "packages/docviewhelper/src/index.ts",
-          "hash": "4273342149011447226"
+          "file": "apps/demo-react/src/app/app.tsx",
+          "hash": "9368657268714448829",
+          "deps": [
+            "data",
+            "react-documents"
+          ]
         },
         {
-          "file": "packages/docviewhelper/src/lib/helper.test.ts",
-          "hash": "6064552635335982745"
+          "file": "apps/demo-react/src/app/logo.svg",
+          "hash": "3819626186967797104"
         },
         {
-          "file": "packages/docviewhelper/src/lib/helper.ts",
-          "hash": "3449594538555546462"
+          "file": "apps/demo-react/src/app/star.svg",
+          "hash": "9662612398473580791"
         },
         {
-          "file": "packages/docviewhelper/src/lib/model.ts",
-          "hash": "18389167018768752367"
+          "file": "apps/demo-react/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
         },
         {
-          "file": "packages/docviewhelper/tsconfig.json",
-          "hash": "17079550796797979564"
+          "file": "apps/demo-react/src/assets/file-sample_100kB.docx",
+          "hash": "8710732751964728453"
         },
         {
-          "file": "packages/docviewhelper/tsconfig.lib.json",
-          "hash": "6236403039999261606"
+          "file": "apps/demo-react/src/assets/file-sample_150kB.pdf",
+          "hash": "9666467186326268832"
         },
         {
-          "file": "packages/docviewhelper/tsconfig.spec.json",
-          "hash": "9648545877377768905"
+          "file": "apps/demo-react/src/assets/file_example_PPTX_250kB.pptx",
+          "hash": "5182128259407377068"
+        },
+        {
+          "file": "apps/demo-react/src/assets/file_example_PPT_250kB.ppt",
+          "hash": "14722537681854608302"
+        },
+        {
+          "file": "apps/demo-react/src/environments/environment.prod.ts",
+          "hash": "10220522844224226756"
+        },
+        {
+          "file": "apps/demo-react/src/environments/environment.ts",
+          "hash": "11309522437153898482"
+        },
+        {
+          "file": "apps/demo-react/src/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/demo-react/src/index.html",
+          "hash": "4094098901359421602"
+        },
+        {
+          "file": "apps/demo-react/src/main.tsx",
+          "hash": "7563131540232445067",
+          "deps": [
+            "npm:react",
+            "npm:react-dom"
+          ]
+        },
+        {
+          "file": "apps/demo-react/src/polyfills.ts",
+          "hash": "12959605551678143287",
+          "deps": [
+            "npm:core-js",
+            "npm:regenerator-runtime"
+          ]
+        },
+        {
+          "file": "apps/demo-react/src/styles.scss",
+          "hash": "5195668842064076916"
+        },
+        {
+          "file": "apps/demo-react/tsconfig.app.json",
+          "hash": "2124737438119609304"
+        },
+        {
+          "file": "apps/demo-react/tsconfig.json",
+          "hash": "9850153468027031608"
+        },
+        {
+          "file": "apps/demo-react/tsconfig.spec.json",
+          "hash": "11051500322653514258"
         }
       ],
       "demo-angular": [
@@ -327,6 +383,105 @@
           "hash": "9571156425590174700"
         }
       ],
+      "docviewhelper": [
+        {
+          "file": "packages/docviewhelper/.babelrc",
+          "hash": "4734508471883268701"
+        },
+        {
+          "file": "packages/docviewhelper/.eslintrc.json",
+          "hash": "9703569748258640057"
+        },
+        {
+          "file": "packages/docviewhelper/README.md",
+          "hash": "12151324711411258584"
+        },
+        {
+          "file": "packages/docviewhelper/jest.config.ts",
+          "hash": "13466499919858543635"
+        },
+        {
+          "file": "packages/docviewhelper/package.json",
+          "hash": "1433611925147057568"
+        },
+        {
+          "file": "packages/docviewhelper/project.json",
+          "hash": "14675182016966539254"
+        },
+        {
+          "file": "packages/docviewhelper/src/index.ts",
+          "hash": "4273342149011447226"
+        },
+        {
+          "file": "packages/docviewhelper/src/lib/helper.test.ts",
+          "hash": "6064552635335982745"
+        },
+        {
+          "file": "packages/docviewhelper/src/lib/helper.ts",
+          "hash": "3449594538555546462"
+        },
+        {
+          "file": "packages/docviewhelper/src/lib/model.ts",
+          "hash": "18389167018768752367"
+        },
+        {
+          "file": "packages/docviewhelper/tsconfig.json",
+          "hash": "17079550796797979564"
+        },
+        {
+          "file": "packages/docviewhelper/tsconfig.lib.json",
+          "hash": "6236403039999261606"
+        },
+        {
+          "file": "packages/docviewhelper/tsconfig.spec.json",
+          "hash": "9648545877377768905"
+        }
+      ],
+      "data": [
+        {
+          "file": "libs/data/.babelrc",
+          "hash": "4734508471883268701"
+        },
+        {
+          "file": "libs/data/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/data/README.md",
+          "hash": "17069913743081624185"
+        },
+        {
+          "file": "libs/data/jest.config.js",
+          "hash": "7056704014703703438"
+        },
+        {
+          "file": "libs/data/project.json",
+          "hash": "5960544128380890705"
+        },
+        {
+          "file": "libs/data/src/index.ts",
+          "hash": "890394197354345985"
+        },
+        {
+          "file": "libs/data/src/lib/demo-data.ts",
+          "hash": "3204867064928720707",
+          "deps": [
+            "docviewhelper"
+          ]
+        },
+        {
+          "file": "libs/data/tsconfig.json",
+          "hash": "17079550796797979564"
+        },
+        {
+          "file": "libs/data/tsconfig.lib.json",
+          "hash": "3185372664353199514"
+        },
+        {
+          "file": "libs/data/tsconfig.spec.json",
+          "hash": "163997633145879976"
+        }
+      ],
       "ngx-doc-viewer": [
         {
           "file": "packages/ngx-doc-viewer/.browserslistrc",
@@ -411,161 +566,6 @@
         {
           "file": "packages/ngx-doc-viewer/tsconfig.spec.json",
           "hash": "18121645209207210368"
-        }
-      ],
-      "demo-react": [
-        {
-          "file": "apps/demo-react/.babelrc",
-          "hash": "13020124393823981135"
-        },
-        {
-          "file": "apps/demo-react/.browserslistrc",
-          "hash": "2888533144288818662"
-        },
-        {
-          "file": "apps/demo-react/.eslintrc.json",
-          "hash": "11012487992710232822"
-        },
-        {
-          "file": "apps/demo-react/jest.config.ts",
-          "hash": "11743847586933159007"
-        },
-        {
-          "file": "apps/demo-react/project.json",
-          "hash": "10098205904880886219"
-        },
-        {
-          "file": "apps/demo-react/src/app/app.module.scss",
-          "hash": "7885872636310131517"
-        },
-        {
-          "file": "apps/demo-react/src/app/app.tsx",
-          "hash": "9368657268714448829",
-          "deps": [
-            "data",
-            "react-documents"
-          ]
-        },
-        {
-          "file": "apps/demo-react/src/app/logo.svg",
-          "hash": "3819626186967797104"
-        },
-        {
-          "file": "apps/demo-react/src/app/star.svg",
-          "hash": "9662612398473580791"
-        },
-        {
-          "file": "apps/demo-react/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/demo-react/src/assets/file-sample_100kB.docx",
-          "hash": "8710732751964728453"
-        },
-        {
-          "file": "apps/demo-react/src/assets/file-sample_150kB.pdf",
-          "hash": "9666467186326268832"
-        },
-        {
-          "file": "apps/demo-react/src/assets/file_example_PPTX_250kB.pptx",
-          "hash": "5182128259407377068"
-        },
-        {
-          "file": "apps/demo-react/src/assets/file_example_PPT_250kB.ppt",
-          "hash": "14722537681854608302"
-        },
-        {
-          "file": "apps/demo-react/src/environments/environment.prod.ts",
-          "hash": "10220522844224226756"
-        },
-        {
-          "file": "apps/demo-react/src/environments/environment.ts",
-          "hash": "11309522437153898482"
-        },
-        {
-          "file": "apps/demo-react/src/favicon.ico",
-          "hash": "9303420814833116677"
-        },
-        {
-          "file": "apps/demo-react/src/index.html",
-          "hash": "4094098901359421602"
-        },
-        {
-          "file": "apps/demo-react/src/main.tsx",
-          "hash": "7563131540232445067",
-          "deps": [
-            "npm:react",
-            "npm:react-dom"
-          ]
-        },
-        {
-          "file": "apps/demo-react/src/polyfills.ts",
-          "hash": "12959605551678143287",
-          "deps": [
-            "npm:core-js",
-            "npm:regenerator-runtime"
-          ]
-        },
-        {
-          "file": "apps/demo-react/src/styles.scss",
-          "hash": "5195668842064076916"
-        },
-        {
-          "file": "apps/demo-react/tsconfig.app.json",
-          "hash": "2124737438119609304"
-        },
-        {
-          "file": "apps/demo-react/tsconfig.json",
-          "hash": "9850153468027031608"
-        },
-        {
-          "file": "apps/demo-react/tsconfig.spec.json",
-          "hash": "11051500322653514258"
-        }
-      ],
-      "data": [
-        {
-          "file": "libs/data/.babelrc",
-          "hash": "4734508471883268701"
-        },
-        {
-          "file": "libs/data/.eslintrc.json",
-          "hash": "13800677001662881425"
-        },
-        {
-          "file": "libs/data/README.md",
-          "hash": "17069913743081624185"
-        },
-        {
-          "file": "libs/data/jest.config.js",
-          "hash": "7056704014703703438"
-        },
-        {
-          "file": "libs/data/project.json",
-          "hash": "5960544128380890705"
-        },
-        {
-          "file": "libs/data/src/index.ts",
-          "hash": "890394197354345985"
-        },
-        {
-          "file": "libs/data/src/lib/demo-data.ts",
-          "hash": "3204867064928720707",
-          "deps": [
-            "docviewhelper"
-          ]
-        },
-        {
-          "file": "libs/data/tsconfig.json",
-          "hash": "17079550796797979564"
-        },
-        {
-          "file": "libs/data/tsconfig.lib.json",
-          "hash": "3185372664353199514"
-        },
-        {
-          "file": "libs/data/tsconfig.spec.json",
-          "hash": "163997633145879976"
         }
       ]
     },
