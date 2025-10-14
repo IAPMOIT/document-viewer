@@ -60,7 +60,7 @@ npm install --legacy-peer-deps
 
 1. **Install Dependencies**: Always use `--legacy-peer-deps` flag
 2. **Node.js Version**: 20.19.5 or compatible
-3. **Cypress**: May fail to install due to network restrictions requiring access to `download.cypress.io` and `cdn.cypress.io` - use `CYPRESS_INSTALL_BINARY=0` if needed
+3. **Cypress**: Installation now works normally with all required domains whitelisted
 
 ### Build Commands
 
@@ -148,10 +148,9 @@ npx nx lint docviewhelper
 **Workaround**: Always use `npm install --legacy-peer-deps`
 
 ### 2. Cypress Installation
-**Issue**: Cypress binary download may fail in restricted environments  
-**Root Cause**: Cypress installation requires access to both `download.cypress.io` and `cdn.cypress.io` domains  
-**Workaround**: Use `CYPRESS_INSTALL_BINARY=0 npm install --legacy-peer-deps` to skip binary download  
-**Note**: If network access is available, both domains must be whitelisted for normal Cypress installation
+**Status**: ✅ **RESOLVED** - Cypress installation now works normally  
+**Previous Issue**: Required access to both `download.cypress.io` and `cdn.cypress.io` domains  
+**Current State**: Both domains are whitelisted and installation works with standard `npm install --legacy-peer-deps`
 
 ### 3. Angular Production Build
 **Issue**: `demo-angular` production build fails with "document.documentElement.setAttribute is not a function"  
