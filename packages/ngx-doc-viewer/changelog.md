@@ -1,3 +1,15 @@
+# 18.0.0 (10/14/2024)
+* **BREAKING CHANGE**: Upgrade to Angular 18.2.14 
+* Updated TypeScript to 5.4.5 for Angular 18 compatibility
+* Updated all Angular dependencies to latest 18.x versions
+* Updated Nx workspace to 19.8.14 for Angular 18 support
+* Updated ng-packagr to 18.2.1
+* Updated Jest presets for Angular 18
+* Updated TypeScript ESLint packages to v6.21.0
+* **Breaking**: Minimum Angular version is now 18.0.0
+* **Breaking**: Minimum TypeScript version is now 5.4.0
+* **Breaking**: Minimum Node.js version is now 18.19.1
+
 # 15.0.1 (12/14/2022)
 * update dependencies
 * removed console logs

@@ -1,6 +1,6 @@
 {
   "name": "ngx-doc-viewer",
-  "version": "16.0.0",
+  "version": "18.0.0",
   "private": false,
   "license": "MIT",
   "description": "Angular document viewer.",
@@ -21,9 +21,9 @@
   ],
   "homepage": "https://github.com/Marcelh1983/document-viewer/tree/main/packages/ngx-doc-viewer",
   "peerDependencies": {
-    "@angular/core": ">= 10.0.0",
-    "@angular/platform-browser": ">= 10.0.0",
-    "@angular/common": ">= 10.0.0"
+    "@angular/core": ">= 18.0.0",
+    "@angular/platform-browser": ">= 18.0.0",
+    "@angular/common": ">= 18.0.0"
   },
   "dependencies": {
     "docviewhelper": ">= 0.0.1"
