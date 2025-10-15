@@ -43,3 +43,4 @@ firebase-debug.log
 .firebase/*.cache
 
 .nx/cache
+.nx/workspace-data
