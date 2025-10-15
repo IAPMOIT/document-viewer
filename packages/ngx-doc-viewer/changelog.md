@@ -9,6 +9,7 @@
 * **Breaking**: Minimum Angular version is now 18.0.0
 * **Breaking**: Minimum TypeScript version is now 5.4.0
 * **Breaking**: Minimum Node.js version is now 18.19.1
+* **Breaking**: TypeScript target/output is now ES2022 (was ES2015). Consumers relying on ES2015/ES2020 output may be affected.
 
 # 15.0.1 (12/14/2022)
 * update dependencies
