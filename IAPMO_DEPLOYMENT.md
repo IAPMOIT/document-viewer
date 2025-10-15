@@ -1,11 +1,10 @@
-# IAPMO Document Viewer Packages
+# IAPMO Document Viewer Package
 
-This repository now provides IAPMO-specific versions of the document viewer packages that can be published to GitHub Package Registry.
+This repository provides the IAPMO-specific version of the document viewer package that can be published to GitHub Package Registry.
 
-## Available Packages
+## Available Package
 
-- `@iapmoit/iapmo-document-viewer` - Angular component for document viewing
-- `@iapmoit/iapmo-react-documents` - React component for document viewing  
+- `@iapmoit/document-viewer` - Angular component for document viewing
 - `@iapmoit/docviewhelper` - Shared helper library
 
 ## GitHub Actions Deployment
@@ -26,12 +25,8 @@ To manually publish packages:
 npm install --legacy-peer-deps
 
 # Publish all IAPMO packages
-npm run publish:iapmo:all
-
-# Or publish individually
 npm run publish:iapmo:docviewhelper
 npm run publish:iapmo:ngx-doc-viewer  
-npm run publish:iapmo:react-documents
 ```
 
 ## Package Installation
@@ -43,10 +38,7 @@ Users can install the packages from GitHub Package Registry:
 echo "@iapmoit:registry=https://npm.pkg.github.com" >> .npmrc
 
 # Install the Angular package
-npm install @iapmoit/iapmo-document-viewer
-
-# Install the React package  
-npm install @iapmoit/iapmo-react-documents
+npm install @iapmoit/document-viewer
 
 # Install the helper library
 npm install @iapmoit/docviewhelper
@@ -70,8 +62,7 @@ No additional setup is needed as these secrets are available at the organization
 ## Known Limitations
 
 Due to TypeScript path mapping issues in the monorepo setup:
-- The Angular package (`@iapmoit/iapmo-document-viewer`) is published from source files
-- The React package (`@iapmoit/iapmo-react-documents`) is published from source files  
+- The Angular package (`@iapmoit/document-viewer`) is published from source files
 - Only the helper library (`@iapmoit/docviewhelper`) is built and published as a compiled package
 
 This approach works for publishing but consumers may need to handle TypeScript compilation in their own projects.

@@ -13,7 +13,7 @@ PDF files and Word documents that are not publicly available can be shown using 
 ### Install the NPM Module
 
 ```sh
-npm install @iapmoit/iapmo-document-viewer --save
+npm install @iapmoit/document-viewer --save
 ```
 
 ### Usage
