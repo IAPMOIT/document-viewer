@@ -28,6 +28,11 @@ jobs:
           node-version: '20.x'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@iapmoit'
+          
+      - name: Configure npm authentication
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.IAPMO_DEPLOY_TOKEN }}" >> ~/.npmrc
+          echo "//npm.pkg.github.com/:username=${{ secrets.IAPMO_DEPLOY_USER }}" >> ~/.npmrc
 
       - name: Install dependencies
         run: npm install --legacy-peer-deps
@@ -57,8 +62,6 @@ jobs:
         run: |
           cd dist/packages/docviewhelper
           npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Prepare and publish iapmo-document-viewer
         run: |
@@ -70,8 +73,6 @@ jobs:
           echo "module.exports = require('./src/index.ts');" > index.js
           echo "export * from './src/index';" > index.d.ts
           npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Prepare and publish iapmo-react-documents  
         run: |
@@ -83,8 +84,6 @@ jobs:
           echo "module.exports = require('./src/index.ts');" > index.js
           echo "export * from './src/index';" > index.d.ts
           npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   publish-on-tag:
     runs-on: ubuntu-latest
@@ -103,6 +102,11 @@ jobs:
           node-version: '20.x'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@iapmoit'
+          
+      - name: Configure npm authentication
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.IAPMO_DEPLOY_TOKEN }}" >> ~/.npmrc
+          echo "//npm.pkg.github.com/:username=${{ secrets.IAPMO_DEPLOY_USER }}" >> ~/.npmrc
 
       - name: Install dependencies
         run: npm install --legacy-peer-deps
@@ -133,5 +137,3 @@ jobs:
           echo "module.exports = require('./src/index.ts');" > index.js  
           echo "export * from './src/index';" > index.d.ts
           npm publish --tag latest
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

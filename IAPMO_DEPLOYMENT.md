@@ -61,7 +61,11 @@ To use packages from GitHub Package Registry, users need to authenticate:
 
 ## GitHub Actions Setup
 
-The workflow requires the `GITHUB_TOKEN` secret which is automatically provided by GitHub Actions. No additional setup is needed.
+The workflow uses the following organization-level secrets which are already configured:
+- `IAPMO_DEPLOY_TOKEN` - GitHub Personal Access Token with packages:write permission
+- `IAPMO_DEPLOY_USER` - GitHub username for authentication
+
+No additional setup is needed as these secrets are available at the organization level.
 
 ## Known Limitations
 
