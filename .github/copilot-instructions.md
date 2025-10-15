@@ -1,13 +1,17 @@
 # Document Viewer - Copilot Instructions
 
+## Recent Updates
+
+**Angular 18 Upgrade** (October 2024): The Angular components have been upgraded from Angular 16 to Angular 18.2.14 with full dependency modernization. This includes TypeScript 5.4.5, Nx 19.8.14, and resolved production build issues.
+
 ## Repository Overview
 
 This is a monorepo for document viewer components that support multiple file types through various rendering strategies. The project provides document viewing capabilities for both Angular (`ngx-doc-viewer`) and React (`react-documents`) frameworks, along with a shared helper library (`docviewhelper`).
 
 **Repository Type**: Nx monorepo  
 **Languages**: TypeScript, JavaScript, HTML, SCSS  
-**Frameworks**: Angular 16, React 18  
-**Build Tool**: Nx 17.0.3  
+**Frameworks**: Angular 18, React 18  
+**Build Tool**: Nx 19.8.14  
 **Package Manager**: npm  
 **Runtime**: Node.js 20.19.5, npm 10.8.2  
 **Repository Size**: ~4 packages, 2 demo apps, 1 shared library
@@ -52,7 +56,7 @@ The repository contains document viewer libraries that support multiple file typ
 **IMPORTANT**: Always run `npm install --legacy-peer-deps` due to Angular/Jest version conflicts. Regular `npm install` will fail with peer dependency conflicts.
 
 ```bash
-# Required due to Jest version conflicts between Angular 16 and Nx 17
+# Required due to Jest version conflicts between Angular 18 and Nx 19
 npm install --legacy-peer-deps
 ```
 
@@ -80,8 +84,9 @@ npx nx build docviewhelper
 #### Demo Application Builds
 
 ```bash
-# Build Angular demo (development mode works, production may fail)
+# Build Angular demo (both development and production modes work)
 npx nx build demo-angular --configuration=development
+npx nx build demo-angular --configuration=production
 
 # Build React demo (production build works)
 npx nx build demo-react
@@ -103,6 +108,7 @@ Since individual library packages cannot be built, development should focus on:
 npm install --legacy-peer-deps
 npx nx build docviewhelper
 npx nx build demo-angular --configuration=development
+npx nx build demo-angular --configuration=production
 npx nx build demo-react
 npx nx serve demo-angular --port=4200
 npx nx serve demo-react --port=4201
@@ -153,8 +159,9 @@ npx nx lint docviewhelper
 **Current State**: Both domains are whitelisted and installation works with standard `npm install --legacy-peer-deps`
 
 ### 3. Angular Production Build
-**Issue**: `demo-angular` production build fails with "document.documentElement.setAttribute is not a function"  
-**Workaround**: Use development configuration: `npx nx build demo-angular --configuration=development`
+**Status**: ✅ **RESOLVED** - Production builds now work correctly with Angular 18  
+**Previous Issue**: `demo-angular` production build failed with "document.documentElement.setAttribute is not a function"  
+**Current State**: Both development and production builds work reliably
 
 ### 4. Library Package Build Failures
 **Issue**: `ngx-doc-viewer` and `react-documents` builds fail with "Cannot find module 'docviewhelper'"  
