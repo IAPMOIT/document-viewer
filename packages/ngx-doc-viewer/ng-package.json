@@ -5,6 +5,6 @@
     "entryFile": "./src/index.ts"
   },
   "allowedNonPeerDependencies": [
-    "docviewhelper"
+    "@iapmoit/docviewhelper"
   ]
 }

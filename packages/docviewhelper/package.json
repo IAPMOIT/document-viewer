@@ -1,8 +1,8 @@
 {
-  "name": "docviewhelper",
+  "name": "@iapmoit/docviewhelper",
   "version": "0.0.2",
   "license": "MIT",
-  "description": "Helper for ngx-doc-viewer and react-documents.",
+  "description": "Helper for IAPMO document viewer packages.",
   "author": {
     "name": "Marcel Hoekstra",
     "email": "marcel.hoekstra@outlook.com",
@@ -10,16 +10,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Marcelh1983/document-viewer.git"
+    "url": "git+https://github.com/IAPMOIT/document-viewer.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "keywords": [
     "ngx-doc-viewer",
-    "react-documents"
+    "react-documents",
+    "IAPMO"
   ],
   "main": "index.js",
   "types": "packages/react-documents/src/index.d.ts",
   "bugs": {
-    "url": "https://github.com/Marcelh1983/document-viewer/issues"
+    "url": "https://github.com/IAPMOIT/document-viewer/issues"
   },
-  "homepage": "https://github.com/Marcelh1983/document-viewer/tree/main/packages/docviewhelper"
+  "homepage": "https://github.com/IAPMOIT/document-viewer/tree/main/packages/docviewhelper"
 }

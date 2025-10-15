@@ -1,0 +1,137 @@
+name: Publish NPM Package
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'packages/**'
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@iapmoit'
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Build and test docviewhelper
+        run: |
+          npx nx build docviewhelper
+          npx nx lint docviewhelper
+          npx nx test docviewhelper
+
+      - name: Lint other packages
+        run: |
+          npx nx lint ngx-doc-viewer
+          npx nx lint react-documents
+
+      - name: Test other packages  
+        run: |
+          npx nx test ngx-doc-viewer
+          npx nx test react-documents
+
+      - name: Build demo applications (validation)
+        run: |
+          npx nx build demo-angular --configuration=production
+          npx nx build demo-react
+
+      - name: Publish docviewhelper to GitHub Packages
+        run: |
+          cd dist/packages/docviewhelper
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Prepare and publish iapmo-document-viewer
+        run: |
+          # Copy source files and create publishable package
+          mkdir -p publish-temp/ngx-doc-viewer
+          cp -r packages/ngx-doc-viewer/* publish-temp/ngx-doc-viewer/
+          cd publish-temp/ngx-doc-viewer
+          # Create a simple index.js and .d.ts for CommonJS compatibility
+          echo "module.exports = require('./src/index.ts');" > index.js
+          echo "export * from './src/index';" > index.d.ts
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Prepare and publish iapmo-react-documents  
+        run: |
+          # Copy source files and create publishable package
+          mkdir -p publish-temp/react-documents
+          cp -r packages/react-documents/* publish-temp/react-documents/
+          cd publish-temp/react-documents
+          # Create a simple index.js and .d.ts for CommonJS compatibility
+          echo "module.exports = require('./src/index.ts');" > index.js
+          echo "export * from './src/index';" > index.d.ts
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  publish-on-tag:
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/')
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@iapmoit'
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Build docviewhelper
+        run: npx nx build docviewhelper
+
+      - name: Publish packages with tag
+        run: |
+          # Publish built docviewhelper
+          cd dist/packages/docviewhelper
+          npm publish --tag latest
+          
+          # Prepare and publish ngx-doc-viewer from source
+          cd ../../../
+          mkdir -p publish-temp/ngx-doc-viewer
+          cp -r packages/ngx-doc-viewer/* publish-temp/ngx-doc-viewer/
+          cd publish-temp/ngx-doc-viewer
+          echo "module.exports = require('./src/index.ts');" > index.js
+          echo "export * from './src/index';" > index.d.ts
+          npm publish --tag latest
+          
+          # Prepare and publish react-documents from source
+          cd ../../
+          mkdir -p react-documents
+          cp -r ../../packages/react-documents/* react-documents/
+          cd react-documents
+          echo "module.exports = require('./src/index.ts');" > index.js  
+          echo "export * from './src/index';" > index.d.ts
+          npm publish --tag latest
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,20 +1,21 @@
-# react-documents
-This component can be used to show several different document types in a React app.
+# IAPMO React Documents
+
+This is the React version of the IAPMO document viewer component. It can be used to show several different document types in a React app.
 
 Documents that are publicly available can be shown in an iframe using the google or office document viewer.
 
-Pdf files and word document that are not publicly available can be shown using the mammoth viewer or pdf viewer by passing an objectUrl.
+PDF files and Word documents that are not publicly available can be shown using the mammoth viewer or PDF viewer by passing an objectUrl.
 
-This package is created from [ngx-doc-viewer](https://github.com/Marcelh1983/document-viewer/blob/main/libs/ngx-doc-viewer/) which is the Angular version.
+This package is created from [ngx-doc-viewer](https://github.com/IAPMOIT/document-viewer/blob/main/libs/ngx-doc-viewer/) which is the Angular version.
 
 <a href="https://react-documents.web.app/">View demo</a>
 
-<a href="https://github.com/Marcelh1983/document-viewer/blob/main/packages/react-documents/changelog.md">Changes</a>
+<a href="https://github.com/IAPMOIT/document-viewer/blob/main/packages/react-documents/changelog.md">Changes</a>
 
 ### Install the NPM Module
 
 ```sh
-npm install react-documents --save
+npm install @iapmoit/iapmo-react-documents --save
 ```
 
 ### Usage

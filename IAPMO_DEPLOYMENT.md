@@ -1,0 +1,73 @@
+# IAPMO Document Viewer Packages
+
+This repository now provides IAPMO-specific versions of the document viewer packages that can be published to GitHub Package Registry.
+
+## Available Packages
+
+- `@iapmoit/iapmo-document-viewer` - Angular component for document viewing
+- `@iapmoit/iapmo-react-documents` - React component for document viewing  
+- `@iapmoit/docviewhelper` - Shared helper library
+
+## GitHub Actions Deployment
+
+The repository includes a GitHub Actions workflow (`.github/workflows/publish-npm.yml`) that automatically:
+
+1. Builds and tests the packages
+2. Publishes packages to GitHub Package Registry 
+3. Triggers on pushes to main/master branches or manual workflow dispatch
+4. Also triggers on GitHub releases for versioned publishing
+
+## Manual Publishing
+
+To manually publish packages:
+
+```bash
+# Install dependencies
+npm install --legacy-peer-deps
+
+# Publish all IAPMO packages
+npm run publish:iapmo:all
+
+# Or publish individually
+npm run publish:iapmo:docviewhelper
+npm run publish:iapmo:ngx-doc-viewer  
+npm run publish:iapmo:react-documents
+```
+
+## Package Installation
+
+Users can install the packages from GitHub Package Registry:
+
+```bash
+# Configure npm to use GitHub Package Registry for @iapmoit scope
+echo "@iapmoit:registry=https://npm.pkg.github.com" >> .npmrc
+
+# Install the Angular package
+npm install @iapmoit/iapmo-document-viewer
+
+# Install the React package  
+npm install @iapmoit/iapmo-react-documents
+
+# Install the helper library
+npm install @iapmoit/docviewhelper
+```
+
+## Authentication
+
+To use packages from GitHub Package Registry, users need to authenticate:
+
+1. Create a GitHub Personal Access Token with `read:packages` permission
+2. Add to `.npmrc`: `//npm.pkg.github.com/:_authToken=YOUR_TOKEN`
+
+## GitHub Actions Setup
+
+The workflow requires the `GITHUB_TOKEN` secret which is automatically provided by GitHub Actions. No additional setup is needed.
+
+## Known Limitations
+
+Due to TypeScript path mapping issues in the monorepo setup:
+- The Angular package (`@iapmoit/iapmo-document-viewer`) is published from source files
+- The React package (`@iapmoit/iapmo-react-documents`) is published from source files  
+- Only the helper library (`@iapmoit/docviewhelper`) is built and published as a compiled package
+
+This approach works for publishing but consumers may need to handle TypeScript compilation in their own projects.
