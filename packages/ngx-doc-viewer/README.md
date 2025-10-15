@@ -1,19 +1,19 @@
-# ngx-doc-viewer
+# IAPMO Document Viewer (Angular)
 
-This component can be used to show several different document types in an Angular app.
+This is the Angular version of the IAPMO document viewer component. It can be used to show several different document types in an Angular app.
 
 Documents that are publicly available can be shown in an iframe using the google or office document viewer.
 
-Pdf files and word document that are not publicly available can be shown using the mammoth viewer or pdf viewer by passing an objectUrl.
+PDF files and Word documents that are not publicly available can be shown using the mammoth viewer or PDF viewer by passing an objectUrl.
 
 <a href="https://angular-doc-viewer.firebaseapp.com/">View demo</a>
 
-<a href="https://github.com/Marcelh1983/document-viewer/blob/main/packages/ngx-doc-viewer/changelog.md">Changes</a>
+<a href="https://github.com/IAPMOIT/document-viewer/blob/main/packages/ngx-doc-viewer/changelog.md">Changes</a>
 
 ### Install the NPM Module
 
 ```sh
-npm install ngx-doc-viewer --save
+npm install @iapmoit/document-viewer --save
 ```
 
 ### Usage

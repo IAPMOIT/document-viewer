@@ -1,13 +1,20 @@
 {
-  "name": "ngx-doc-viewer",
+  "name": "@iapmoit/document-viewer",
   "version": "18.0.0",
   "private": false,
   "license": "MIT",
-  "description": "Angular document viewer.",
+  "description": "Angular document viewer - IAPMO Edition.",
   "author": {
     "name": "Marcel Hoekstra",
     "email": "marcel.hoekstra@outlook.com",
     "url": "https://github.com/Marcelh1983/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IAPMOIT/document-viewer.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "funding": [
     {
@@ -19,13 +26,13 @@
       "url": "https://www.buymeacoffee.com/marcelh1983"
     }
   ],
-  "homepage": "https://github.com/Marcelh1983/document-viewer/tree/main/packages/ngx-doc-viewer",
+  "homepage": "https://github.com/IAPMOIT/document-viewer/tree/main/packages/ngx-doc-viewer",
   "peerDependencies": {
     "@angular/core": ">= 18.0.0",
     "@angular/platform-browser": ">= 18.0.0",
     "@angular/common": ">= 18.0.0"
   },
   "dependencies": {
-    "docviewhelper": ">= 0.0.1"
+    "@iapmoit/docviewhelper": ">= 0.0.1"
   }
 }
