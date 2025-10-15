@@ -65,9 +65,10 @@ jobs:
           mkdir -p publish-temp/ngx-doc-viewer
           cp -r packages/ngx-doc-viewer/* publish-temp/ngx-doc-viewer/
           cd publish-temp/ngx-doc-viewer
-          # Create a simple index.js and .d.ts for CommonJS compatibility
-          echo "module.exports = require('./src/index.ts');" > index.js
-          echo "export * from './src/index';" > index.d.ts
+          # For Angular libraries published as source, set the main entry to the TypeScript index
+          # and let consuming applications handle the TypeScript compilation
+          npm pkg set main="src/index.ts"
+          npm pkg set types="src/index.ts"
           npm publish
 
   publish-on-tag:
@@ -110,6 +111,6 @@ jobs:
           mkdir -p publish-temp/ngx-doc-viewer
           cp -r packages/ngx-doc-viewer/* publish-temp/ngx-doc-viewer/
           cd publish-temp/ngx-doc-viewer
-          echo "module.exports = require('./src/index.ts');" > index.js
-          echo "export * from './src/index';" > index.d.ts
+          npm pkg set main="src/index.ts"
+          npm pkg set types="src/index.ts"
           npm publish --tag latest

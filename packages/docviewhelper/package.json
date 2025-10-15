@@ -20,8 +20,8 @@
     "react-documents",
     "IAPMO"
   ],
-  "main": "index.js",
-  "types": "packages/react-documents/src/index.d.ts",
+  "main": "index.esm.js",
+  "types": "index.esm.d.ts",
   "bugs": {
     "url": "https://github.com/IAPMOIT/document-viewer/issues"
   },

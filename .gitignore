@@ -44,3 +44,6 @@ firebase-debug.log
 
 .nx/cache
 .nx/workspace-data
+
+# Publishing temporary files
+publish-temp/
