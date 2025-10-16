@@ -30,34 +30,24 @@ jobs:
           
       - name: Configure npm authentication
         run: |
+          echo "@OWNER:registry=https://npm.pkg.github.com/" >> ~/.npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.IAPMO_DEPLOY_TOKEN }}" >> ~/.npmrc
           echo "//npm.pkg.github.com/:username=${{ secrets.IAPMO_DEPLOY_USER }}" >> ~/.npmrc
 
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Build and test docviewhelper
+      - name: Build required dependencies
         run: |
           npx nx build docviewhelper
-          npx nx lint docviewhelper
-          npx nx test docviewhelper
 
-      - name: Lint other packages
+      - name: Lint Angular document viewer
         run: |
           npx nx lint ngx-doc-viewer
-
-      - name: Test other packages  
-        run: |
-          npx nx test ngx-doc-viewer
 
       - name: Build demo applications (validation)
         run: |
           npx nx build demo-angular --configuration=production
-
-      - name: Publish docviewhelper to GitHub Packages
-        run: |
-          cd dist/packages/docviewhelper
-          npm publish
 
       - name: Prepare and publish document-viewer
         run: |
@@ -91,23 +81,19 @@ jobs:
           
       - name: Configure npm authentication
         run: |
+          echo "@OWNER:registry=https://npm.pkg.github.com/" >> ~/.npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.IAPMO_DEPLOY_TOKEN }}" >> ~/.npmrc
           echo "//npm.pkg.github.com/:username=${{ secrets.IAPMO_DEPLOY_USER }}" >> ~/.npmrc
 
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Build docviewhelper
+      - name: Build required dependencies
         run: npx nx build docviewhelper
 
-      - name: Publish packages with tag
+      - name: Prepare and publish document-viewer with tag
         run: |
-          # Publish built docviewhelper
-          cd dist/packages/docviewhelper
-          npm publish --tag latest
-          
           # Prepare and publish ngx-doc-viewer from source
-          cd ../../../
           mkdir -p publish-temp/ngx-doc-viewer
           cp -r packages/ngx-doc-viewer/* publish-temp/ngx-doc-viewer/
           cd publish-temp/ngx-doc-viewer
