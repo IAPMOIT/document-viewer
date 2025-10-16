@@ -30,6 +30,7 @@ jobs:
           
       - name: Configure npm authentication
         run: |
+          echo "@iapmoit:registry=https://npm.pkg.github.com" >> ~/.npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.IAPMO_DEPLOY_TOKEN }}" >> ~/.npmrc
           echo "//npm.pkg.github.com/:username=${{ secrets.IAPMO_DEPLOY_USER }}" >> ~/.npmrc
 
@@ -91,6 +92,7 @@ jobs:
           
       - name: Configure npm authentication
         run: |
+          echo "@iapmoit:registry=https://npm.pkg.github.com" >> ~/.npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.IAPMO_DEPLOY_TOKEN }}" >> ~/.npmrc
           echo "//npm.pkg.github.com/:username=${{ secrets.IAPMO_DEPLOY_USER }}" >> ~/.npmrc
 
